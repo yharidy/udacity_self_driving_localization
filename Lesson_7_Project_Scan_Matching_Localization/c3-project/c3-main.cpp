@@ -237,7 +237,7 @@ int main(){
 			Eigen::Matrix4d icpTransform =ICP(mapCloud, cloudFiltered, pose, 0);
 			pose = getPose(icpTransform);
 			// TODO: Transform scan so it aligns with ego's actual pose and render that scan
-		PointCloudT::Ptr transformedCloud (new PointCloudT);
+			PointCloudT::Ptr transformedCloud (new PointCloudT);
 			pcl::transformPointCloud(*cloudFiltered, *transformedCloud, icpTransform);
 			viewer->removePointCloud("scan");
 			// TODO: Change `scanCloud` below to your transformed scan
